@@ -18,3 +18,9 @@
 
 default_processing_pipeline:
   Page: erb,tags,haml,blocks
+
+patterns:
+  Page:
+    add: [**/*.css]
+  Copy:
+    del: [**/*.css]
