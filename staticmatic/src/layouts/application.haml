@@ -2,6 +2,11 @@
 %html
   %head
     %title StaticMatic
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => 'http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css'}
     = stylesheets
   %body
-    = yield
+    #doc
+      #hd
+      #bd
+        = yield
+      #ft
