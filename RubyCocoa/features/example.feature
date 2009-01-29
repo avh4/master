@@ -4,5 +4,5 @@ Feature: Example feature
 
   Scenario: Create the app window
     Given a given
-    When a when
-    Then the then
+    When the main window is shown
+    Then the window will be empty
