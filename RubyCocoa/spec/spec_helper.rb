@@ -1,7 +1,13 @@
 require 'spec'
 require 'osx/cocoa'
 
-$:.unshift File.dirname(__FILE__) + "/.."
+# Load the app files-- copied from rb_main.rb
+path = File.dirname(__FILE__) + "/.."
+rbfiles = Dir.entries(path).select {|x| /\.rb\z/ =~ x}
+rbfiles -= [ File.basename(__FILE__) ]
+rbfiles.each do |path|
+  require( File.basename(path) )
+end
 
 # This method is used to prevent warnings on lines like this
 #    some_number.should == 7
