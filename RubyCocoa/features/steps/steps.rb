@@ -19,7 +19,10 @@ def loadNibWithOwner(file, owner)
 end
 
 def approveWindow(window, name)  
-  OSX::GTMRenderer.isImageOfObject_matches(@window.contentView.superview, name).should == 1
+  error = OSX::GTMRenderer.isImageOfObject_matches(@window.contentView.superview, name)
+  if (error != nil)
+    fail error.to_s
+  end
 end
 
 Given /^a given$/ do
